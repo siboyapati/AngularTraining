@@ -4,19 +4,17 @@
 ## Instructions to run the Node/Express application
 
 ```shell
-   npm install
- ```
-
+npm install
+```
 ```shell
 grunt run
 ```
-   or
-
+or
 ```shell
-  node server.js
+node server.js
  ```
 ```shell
-  nhttp://localhost:3000
+run the web application using: http://localhost:3000
  ```
 
 
