@@ -16,4 +16,11 @@ app.controller("todosAppCtrl", function ($scope) {
         $scope.products.pop(r);
     }
 
+    $scope.todosList = [
+        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false},
+        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false},
+        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false},
+        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false}
+    ]
+
 });
