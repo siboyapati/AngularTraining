@@ -18,34 +18,46 @@
     <script src="app.js"></script>
     <script src="todoCtrl.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <script src="//use.edgefonts.net/neuton.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
-<header>
-    <h1>Adding shopping cart</h1>
-</header>
+
 <body ng-app="todosApp" ng-controller="todosAppCtrl">
 
-<div class="container">
-    <div class="input-group input-group-lg col-xs-11 col-md-11" style="padding-left:28px;align-content:center">
-        <input class="form-control input-md"  type="text" ng-model="productItem"
-               placeholder="add shopping items" aria-invalid="false" ng-keyup="addProductToList()">
+<header>
+    <h3 style="text-align: center">Todo's list</h3>
+</header>
+
+<div class="container" style="text-align: center">
+    <div class="input-group input-group-lg col-xs-12 col-md-12">
+        <input class="form-control input-md" type="text" ng-model="task"
+               placeholder="add shopping items" aria-invalid="false" ng-keyup="addTodosList()">
     </div>
 
-    <div class="list-group" ng-repeat="r in products" >
-        <div class="view">
-            <input type="checkbox" ng-click="deleteProduct(r)" ng-model="todo.done"/>
-            <span class="done-{{todo.done}}" >{{r}}</span>
+    <form action="">
+        <div class="checkbox-primary checkbox-circle" ng-repeat="r in todoList">
+            <h3>
+                <input type="checkbox" ng-model="oneAtATime" ng-click="deleteProduct(r)">
+                {{r.task}}
+            </h3>
+            <h5>Date:{{r.createdAt | date:'medium' }}</h5>
+        </div>
+    </form>
+
+    <hr>
+    <h3 style="text-align: center">Completed task</h3>
+    <form action="">
+        <div class="checkbox-primary checkbox-circle" ng-repeat="r in todoList">
+            <h3 ng-if="r.isDone">
+                {{r.task}}
+            </h3>
 
         </div>
-    </div>
-
-
+    </form>
 </div>
 </body>
 </html>

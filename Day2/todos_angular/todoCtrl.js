@@ -4,23 +4,23 @@
 
 app.controller("todosAppCtrl", function ($scope) {
 
-    $scope.products = ["milk", "bread"]
+    $scope.todoList = [];
 
-    $scope.addProductToList = function () {
-        if (event.keyCode == 13 && $scope.productItem) {
-            $scope.products.push($scope.productItem);
+    $scope.addTodosList = function () {
+        if (event.keyCode == 13 && $scope.task) {
+            var _todo={"task": $scope.task,createdAt : new Date(),"isDone":false };
+            $scope.todoList.push(_todo);
+            $scope.task = " ";
         }
     }
 
     $scope.deleteProduct = function (r) {
-        $scope.products.pop(r);
-    }
+        if(r.isDone){
+            r.isDone =false;
 
-    $scope.todosList = [
-        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false},
-        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false},
-        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false},
-        {"task": "do the home work",createdAt:"04/23/2016 12:00","isDone":false}
-    ]
+        }else{
+            r.isDone = true;
+        }
+    }
 
 });
