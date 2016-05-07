@@ -1,0 +1,54 @@
+<div class="container" ng-controller="homeController">
+	<div class="row">
+		<div class="col-xs-offset-10 col-xs-2">
+			<span><ngcart-summary></ngcart-summary></span>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control input-lg text-center"
+									 placeholder="Search (example: node.js or android)" ng-model="searchText">
+					</div>
+
+				</form>
+			</div>
+		</div>
+		<div class="col-sm-12">
+			<!--{ "_id": "56b542a63dc8e8ee02c2b1cb", "quantity": 200, "price": 100, "publicationyear": "2015", "isbn10": "11334", "author": "siva", "title": "c++", "__v": 0 }-->
+			<div ng-repeat="book in books | filter:searchText | orderBy:'title'">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-sm-9">
+								<h6 class="booktitle"><i class="fa fa-book fa-fw"></i>&nbsp;{{book.title}}</h6>
+
+							</div>
+							<div class="col-sm-3 text-right">
+								{{book.price | currency}}</i>
+							</div>
+						</div>
+						<div class="row">
+
+							<div class="col-sm-6">
+								<h6>Author: {{book.author}}</h6>
+							</div>
+							<div class="col-sm-6 text-right">
+								<ngcart-addtocart id="{{ book._id }}" name="{{ book.title }}" price="{{ book.price }}" quantity="1"
+																	quantity-max="5">Add to cart
+								</ngcart-addtocart>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<a ui-sref="checkout" class="btn btn-primary btn-group-justified" role="button"><i class="fa fa-shopping-cart"></i>&nbsp;
+		Checkout</a>
+</div>
+
+
