@@ -1,0 +1,17 @@
+{
+  "name": "project1",
+  "homepage": "https://github.com/sivaboyapati/AngularTraining",
+  "authors": [
+    "Siva Boyapati <siva.boyapati@autodesk.com>"
+  ],
+  "description": "project1 bower components",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

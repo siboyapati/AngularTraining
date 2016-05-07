@@ -1,0 +1,7 @@
+npm install angular
+bower install jquery
+
+Expressions
+Scopes
+Models
+Two-way data binding

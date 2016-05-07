@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Services and Modules</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+                .directive('boldClick', function () {
+                    return function(scope, element) {
+                        var bold = false;
+                        element.click(function() {
+                            if (bold) {
+                                element.css('font-weight', 'normal');
+                            } else {
+                                element.css('font-weight', 'bold');
+                            }
+                            bold = !bold;
+                        });
+                    };
+                });
+    </script>
+</head>
+<body>
+<div class="well">
+    My pet is a <span bold-click>tortoise</span>.
+</div>
+</body>
+</html>

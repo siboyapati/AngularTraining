@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example - example-example46-production</title>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <script src="script.js"></script>
+</head>
+<body ng-app="myServiceModule">
+<div id="simple" ng-controller="MyController">
+    <h3>custom directives examples</h3>
+    <hr>
+
+    <!--Element-->
+    <workout-tile></workout-tile>
+
+    <!--Attribute-->
+   <span workout-tile=''></span>
+
+    <!--Class-->
+    <div class="workout-tile"></div>
+
+
+
+</div>
+</body>
+</html>
+
